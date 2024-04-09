@@ -6,3 +6,5 @@ storage/backup/*
 storage/restore/*
 !storage/backup/.gitkeep
 !storage/restore/.gitkeep
+.es/*
+!.es/.gitkeep

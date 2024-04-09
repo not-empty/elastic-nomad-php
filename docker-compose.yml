@@ -1,0 +1,25 @@
+version: '3.7'
+services:
+  nomad-elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.4.2
+    container_name: nomad-elasticsearch
+    environment:
+      - node.name=es01
+      - cluster.name=docker-cluster
+      - discovery.type=single-node
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m -XX:MaxMetaspaceSize=128m"
+    volumes:
+      - ./.es:/usr/share/elasticsearch/data:delegated
+    ports:
+      - 9200:9200
+      - 9300:9300
+    logging:
+      driver: json-file
+
+  nomad-php:
+    build:
+      context: ../elastic-nomad-php
+      dockerfile: ops/docker/dev/Dockerfile
+    container_name: nomad-php
+    volumes:
+      - ../elastic-nomad-php:/var/www/html
