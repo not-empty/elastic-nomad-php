@@ -1,6 +1,8 @@
 {
     "name": "not-empty/elastic-nomad-php",
     "type": "project",
+    "description": "PHP script to execute Elasticsearch backups and restorations using S3",
+    "version": "2.0.0",
     "require": {
         "vlucas/phpdotenv": "^4.1",
         "elasticsearch/elasticsearch": "~7.0",

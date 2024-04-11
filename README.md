@@ -9,6 +9,8 @@ PHP script to execute Elasticsearch backups and restorations using S3.
 
 [Release 1.0.0](https://github.com/not-empty/elastic-nomad-php/releases/tag/1.0.0) Requires [PHP](https://php.net) 7.3
 
+[Release 2.0.0](https://github.com/not-empty/elastic-nomad-php/releases/tag/2.0.0) Requires [PHP](https://php.net) 7.4
+
 ### Sample
 
 it's a good idea to look in the sample folder to understand how it works.
@@ -63,5 +65,26 @@ Run all validations
 ```sh
 composer check
 ```
+
+### Backup
+If you want to run a backup you can run the command:
+
+```sh
+php index.php backup {param}
+```
+
+In the backup command the {param} is the name of the index.
+
+### Restore
+If you want to restore your data in the elastic, you can run the command:
+
+```sh
+php index.php restore {param}
+```
+
+In the restore command the {param} is the name of the txt file located on storage/restore.
+
+
+If you want to check if your data is on the elastic, you can use the collection available on /ops/collections.
 
 **Not-empty - Open your code, open your mind!**
